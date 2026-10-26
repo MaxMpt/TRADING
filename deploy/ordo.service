@@ -1,0 +1,14 @@
+[Unit]
+Description=ORDO trading desk
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/ordo
+ExecStart=/usr/bin/npm run dev
+Restart=always
+RestartSec=3
+Environment=NODE_ENV=development
+
+[Install]
+WantedBy=multi-user.target
